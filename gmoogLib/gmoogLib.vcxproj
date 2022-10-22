@@ -168,7 +168,6 @@
     <ClCompile Include="BoostAsyncSerial.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="gmoogLib.cpp" />
-    <ClCompile Include="KA007_cpp.cpp" />
     <ClCompile Include="lib.cpp" />
     <ClCompile Include="MessagePrinter.cpp" />
     <ClCompile Include="MessageSender.cpp" />
