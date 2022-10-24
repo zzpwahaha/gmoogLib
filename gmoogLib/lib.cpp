@@ -123,7 +123,7 @@ void gigaMoog::_zeroAll(MessageSender& ms)
 	}
 }
 
-void gigaMoog::setDAC(int DAC, int channels, float *freqs, float *amps, float *phases) {
+void gigaMoog::setDAC(int DAC, int channels, double *freqs, double *amps, double *phases) {
 	MessageSender ms;
 
 	_setDAC(ms, DAC, channels, freqs, amps, phases);
@@ -136,7 +136,7 @@ void gigaMoog::setDAC(int DAC, int channels, float *freqs, float *amps, float *p
 
 }
 
-void gigaMoog::_setDAC(MessageSender& ms, int DAC, int channels, float* freqs, float* amps, float* phases)
+void gigaMoog::_setDAC(MessageSender& ms, int DAC, int channels, double* freqs, double* amps, double* phases)
 {
 	MessageDAC dacset;
 	if (DAC == 0) {
@@ -165,7 +165,7 @@ void gigaMoog::_setDAC(MessageSender& ms, int DAC, int channels, float* freqs, f
 	}
 }
 
-void gigaMoog::zeroAndSetDAC(int DAC, int channels, float* freqs, float* amps, float* phases)
+void gigaMoog::zeroAndSetDAC(int DAC, int channels, double* freqs, double* amps, double* phases)
 {
 	MessageSender ms;;
 	_zeroAll(ms);
@@ -175,7 +175,7 @@ void gigaMoog::zeroAndSetDAC(int DAC, int channels, float* freqs, float* amps, f
 	send(ms);
 }
 
-void gigaMoog::zeroAndSetTwoDACs(int DAC0, int channels0, float* freqs0, float* amps0, float* phases0, int DAC1, int channels1, float* freqs1, float* amps1, float* phases1)
+void gigaMoog::zeroAndSetTwoDACs(int DAC0, int channels0, double* freqs0, double* amps0, double* phases0, int DAC1, int channels1, double* freqs1, double* amps1, double* phases1)
 {
 	MessageSender ms;;
 	_zeroAll(ms);

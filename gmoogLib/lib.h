@@ -24,12 +24,12 @@ public:
 	void _zeroAll(MessageSender& ms);
 	void endMessage();
 	void _endMessage(MessageSender& ms);
-	void setDAC(int DAC, int channels, float *freqs, float *amps, float *phases);
-	void _setDAC(MessageSender& ms, int DAC, int channels, float* freqs, float* amps, float* phases);
+	void setDAC(int DAC, int channels, double *freqs, double *amps, double *phases);
+	void _setDAC(MessageSender& ms, int DAC, int channels, double* freqs, double* amps, double* phases);
 
-	void zeroAndSetDAC(int DAC, int channels, float* freqs, float* amps, float* phases);
-	void zeroAndSetTwoDACs(int DAC0, int channels0, float* freqs0, float* amps0, float* phases0, 
-		int DAC1, int channels1, float* freqs1, float* amps1, float* phases1);
+	void zeroAndSetDAC(int DAC, int channels, double* freqs, double* amps, double* phases);
+	void zeroAndSetTwoDACs(int DAC0, int channels0, double* freqs0, double* amps0, double* phases0, 
+		int DAC1, int channels1, double* freqs1, double* amps1, double* phases1);
 
 	void send(MessageSender& ms);
 
@@ -44,12 +44,12 @@ extern "C" {
 	__declspec(dllexport) gigaMoog* gm_new(void) { return new gigaMoog(); }
 	__declspec(dllexport) int gm_test(gigaMoog* gm) { return gm->test(); }
 	__declspec(dllexport) void gm_zeroAll(gigaMoog* gm) { gm->zeroAll(); }
-	__declspec(dllexport) void gm_setDAC(gigaMoog* gm, int DAC, int channels, float freqs[], float amps[], float phases[]) { 
+	__declspec(dllexport) void gm_setDAC(gigaMoog* gm, int DAC, int channels, double freqs[], double amps[], double phases[]) {
 		gm->setDAC(DAC, channels, freqs, amps, phases); }
 	__declspec(dllexport) void gm_endMessage(gigaMoog* gm) { gm->endMessage(); }
-	__declspec(dllexport) void gm_zeroAndSetDAC(gigaMoog* gm, int DAC, int channels, float freqs[], float amps[], float phases[]) { 
+	__declspec(dllexport) void gm_zeroAndSetDAC(gigaMoog* gm, int DAC, int channels, double freqs[], double amps[], double phases[]) {
 		gm->zeroAndSetDAC(DAC, channels, freqs, amps, phases); }
-	__declspec(dllexport) void gm_zeroAndSetTwoDACs(gigaMoog* gm, int DAC0, int channels0, float freqs0[], float amps0[], float phases0[],
-		int DAC1, int channels1, float freqs1[], float amps1[], float phases1[]) { 
+	__declspec(dllexport) void gm_zeroAndSetTwoDACs(gigaMoog* gm, int DAC0, int channels0, double freqs0[], double amps0[], double phases0[],
+		int DAC1, int channels1, double freqs1[], double amps1[], double phases1[]) { 
 		gm->zeroAndSetTwoDACs(DAC0, channels0, freqs0, amps0, phases0, DAC1, channels1, freqs1, amps1, phases1); }
 }
